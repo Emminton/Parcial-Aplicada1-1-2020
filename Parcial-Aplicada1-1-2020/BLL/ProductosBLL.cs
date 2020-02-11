@@ -61,7 +61,7 @@ namespace Parcial_Aplicada1_1_2020.BLL
             {
                 var eliminar = db.Producto.Find(id);
                 db.Entry(eliminar).State = Microsoft.EntityFrameworkCore.EntityState.Deleted;
-
+                paso = (db.SaveChanges() > 0);
             }
             catch (Exception)
             {
