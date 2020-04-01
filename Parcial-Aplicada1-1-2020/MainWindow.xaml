@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="500">
     <Grid>
         <Label Content="ProductoId:" HorizontalAlignment="Left" Margin="36,37,0,0" VerticalAlignment="Top" Width="94" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Descripcion:" HorizontalAlignment="Left" Margin="36,88,0,0" VerticalAlignment="Top" Width="94" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Nombre Producto:" HorizontalAlignment="Left" Margin="36,88,0,0" VerticalAlignment="Top" Width="142" FontSize="14" FontWeight="Bold"/>
         <Label Content="Existencia:" HorizontalAlignment="Left" Margin="36,136,0,0" VerticalAlignment="Top" Width="84" FontSize="14" FontWeight="Bold"/>
         <Label Content="Costo:" HorizontalAlignment="Left" Margin="36,191,0,0" VerticalAlignment="Top" Width="64" FontSize="14" FontWeight="Bold"/>
         <Label Content="Valor Inventario:" HorizontalAlignment="Left" Margin="36,240,0,0" VerticalAlignment="Top" Width="124" FontSize="14" FontWeight="Bold"/>

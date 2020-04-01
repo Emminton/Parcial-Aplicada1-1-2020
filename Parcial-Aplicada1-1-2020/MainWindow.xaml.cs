@@ -92,7 +92,7 @@ namespace Parcial_Aplicada1_1_2020
             if (paso)
             {
                 Limpiar();
-                MessageBox.Show("Guardar!", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Guardado!", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }
             else
@@ -102,8 +102,8 @@ namespace Parcial_Aplicada1_1_2020
 
         private bool ExisteEnLaBaseDeDatos()
         {
-           Productos estudiante = ProductosBLL.Buscar(Convert.ToInt32(ProductIdTex.Text));
-            return (estudiante != null);
+           Productos producto = ProductosBLL.Buscar(Convert.ToInt32(ProductIdTex.Text));
+            return (producto != null);
         }
 
        
@@ -112,11 +112,20 @@ namespace Parcial_Aplicada1_1_2020
             int id;
             int.TryParse(ProductIdTex.Text, out id);
 
-            Limpiar();
-
-            if (ProductosBLL.Eliminar(id))
-                MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                 
             
+            if (ProductosBLL.Eliminar(id))
+            {
+                Limpiar(); 
+                MessageBox.Show("Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+                    
+                
+            
+            else
+
+            
+            MessageBox.Show("El Producto que seleciono no Existe!!");
         }
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
@@ -126,9 +135,10 @@ namespace Parcial_Aplicada1_1_2020
             int.TryParse(ProductIdTex.Text, out id);
 
             Limpiar();
-            productos = ProductosBLL.Buscar(id);
+           
             if (productos != null)
-            {
+            { 
+                productos = ProductosBLL.Buscar(id);
 
                 LlenaCampo(productos);
             }
@@ -179,9 +189,9 @@ namespace Parcial_Aplicada1_1_2020
                 existencia = decimal.Parse(ExistenciaTex.Text);
             }
 
-            decimal perdido = costo * existencia;
+            decimal resultado = costo * existencia;
 
-            ValorInventarioTex.Text = perdido.ToString();
+            ValorInventarioTex.Text = resultado.ToString();
 
         }
 
@@ -200,9 +210,9 @@ namespace Parcial_Aplicada1_1_2020
                 existencia = decimal.Parse(ExistenciaTex.Text);
             }
 
-            decimal perdido = costo * existencia;
+            decimal resultado = costo * existencia;
           
-            ValorInventarioTex.Text = perdido.ToString();
+            ValorInventarioTex.Text = resultado.ToString();
             
         }
     }
